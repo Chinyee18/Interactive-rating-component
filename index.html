@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Interactive rating component</title>
+
+  <!-- bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <!-- css style -->
+  <link href="style.css" rel="stylesheet">
+
+  <!-- font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass&display=swap" rel="stylesheet">
+  
+</head>
+<body class="h-100 text-white">
+    
+  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <main class="px-3 my-auto">
+      <div class="card" id="rate">
+        <div class="card-body">
+          <div class="icon-star"><img src="images/icon-star.svg" class="rounded mx-auto d-block"></div>
+          <h5 class="card-title mt-4">How did we do?</h5>
+          <p class="card-text medium-grey-text">Please let us know how we did with your support request. All feedback is appreciated 
+            to help us improve our offering!</p>
+          <div class="rating mt-4 mb-4 row">
+            <div class="col rating">
+              <input type="radio" id="star1" name="rating" value="1" />
+              <label for="star1">1</label>
+            </div>
+            <div class="col rating">
+              <input type="radio" id="star2" name="rating" value="2" />
+              <label for="star2">2</label>
+            </div>
+            <div class="col rating">
+              <input type="radio" id="star3" name="rating" value="3" />
+              <label for="star3">3</label>
+            </div>
+            <div class="col rating">
+              <input type="radio" id="star4" name="rating" value="4" />
+              <label for="star4">4</label>
+            </div>
+            <div class="col rating">
+              <input type="radio" id="star5" name="rating" value="5" />
+              <label for="star5">5</label>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-orange" id="submit">SUBMIT</button>
+          
+        </div>
+      </div>
+      <div class="card d-none" id="result">
+        <div class="card-body text-center">
+          <div class="mt-auto mb-auto"> 
+            <img src="images/illustration-thank-you.svg" class="rounded mx-auto d-block">
+            <div class="text-wrap mt-4 mb-4">
+              <div id="rateValue"></div>
+            </div>
+            <h5 class="card-title">Thank you!</h5>
+            <p class="card-text medium-grey-text">We appreciate you taking the time to give a rating. If you ever need more support, 
+              don’t hesitate to get in touch!</p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/Chinyee18">Chin Yee</a>.
+  </div>
+  <script>
+    document.getElementById("submit").addEventListener("click", submit);
+    function submit(){
+        const rateVal = document.querySelector('input[name="rating"]:checked').value;
+        document.getElementById("rateValue").innerHTML = `You selected ${rateVal} out of 5`;
+        showResult();
+    }
+    function showResult(){
+      document.getElementById("rate").classList.add('d-none'); // hide
+      document.getElementById("result").classList.remove('d-none'); // show
+    }
+  </script>
+</body>
+</html>
