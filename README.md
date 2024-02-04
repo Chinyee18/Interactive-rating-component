@@ -1,6 +1,8 @@
 # Frontend Mentor - Interactive rating component
 
-![Design preview for the Interactive rating component coding challenge](./design/desktop-preview.jpg)
+![active-states](https://github.com/Chinyee18/Interactive-rating-component/assets/53111687/391a2803-7e11-4d00-a4d6-c206b6bf8793)
+
+[Preview Site](https://interative-rating-component-beta.vercel.app/)
 
 ## Welcome! 👋
 
